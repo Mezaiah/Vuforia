@@ -12,6 +12,8 @@ public class BattleManager : MonoBehaviour
       [SerializeField]
       private float secondsBetweenAttacks = 1f;
     
+         [SerializeField]
+      private float secondsToStartBattle = 1f;
       [SerializeField]
       private float secondsToAttacks = 1f;
     
@@ -21,6 +23,7 @@ public class BattleManager : MonoBehaviour
       public UnityEvent onBattleStop;
       private int currentfighterIndex = 0;
       private bool isBattleActive = false;
+      private Coroutine attackCoRoutine;
 
 
       public void AddFighter(Fighter fighter)
@@ -42,19 +45,27 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
-            StartBattle();
+            Invoke ("StartBattle", secondsToStartBattle);
         }
       }
 
     private void StartBattle()
     {
+      if (isBattleActive || fighters.Count < fightersRequired)
+      {
+        return;
+      }
        isBattleActive = true;
         onBattleStart?.Invoke();
-       StartCoroutine(Attack());
+       attackCoRoutine =  StartCoroutine(Attack());
     }
 
     private IEnumerator Attack()
     {
+      if (!isBattleActive)
+      {
+        yield break;
+      }
 
         currentfighterIndex =Random.Range(0,fighters.Count);
         Fighter attacker = fighters[currentfighterIndex];
@@ -64,14 +75,18 @@ public class BattleManager : MonoBehaviour
             currentfighterIndex =Random.Range(0,fighters.Count);
             defender = fighters[currentfighterIndex];
         } while (attacker == defender);
+
+        attacker.transform.LookAt(defender.transform.position);
+        defender.transform.LookAt(attacker.transform.position);
         attacker.Attack();
+        yield return new WaitForSeconds(attacker.attackDuration);
         float damage =attacker.GetDamage();
         defender.GetComponent<Health>().TakeDamage(damage);
 
         yield return new WaitForSeconds(secondsToAttacks);
         if(defender.GetComponent<Health>().CurrentHealth>0)
         {
-            StartCoroutine(Attack());
+           attackCoRoutine = StartCoroutine(Attack());
         }else 
         {
             StopBattle();
@@ -80,7 +95,16 @@ public class BattleManager : MonoBehaviour
     
     private void StopBattle()
     {
+
+      isBattleActive = false;
+        if (attackCoRoutine != null)
+        {
+          StopCoroutine(attackCoRoutine);
+          attackCoRoutine = null;
+        }
+        
         onBattleStop?.Invoke();
+
     }
     
 }

@@ -1492,6 +1492,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 748262732}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pikachu|Jump_Pikachu
+          m_BoolArgument: 0
+        m_CallState: 2
   onAttack:
     m_PersistentCalls:
       m_Calls:
@@ -1563,7 +1575,19 @@ MonoBehaviour:
         m_CallState: 2
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 748262732}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: death_pikachu
+          m_BoolArgument: 0
+        m_CallState: 2
   onDmgReceived:
     m_PersistentCalls:
       m_Calls:
@@ -1833,19 +1857,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00049081
+      value: 0.000060689057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.005
+      value: 0.0050000027
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.012647
+      value: -0.012814127
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3260887
+      value: -0.03787169
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1853,7 +1877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.9453392
+      value: -0.9992826
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1865,7 +1889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -141.937
+      value: -184.341
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 410e6a34b4682a14d8db0a2de4a53feb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3108,7 +3132,19 @@ MonoBehaviour:
         m_CallState: 2
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1444736321}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: death_Leaf
+          m_BoolArgument: 0
+        m_CallState: 2
   onDmgReceived:
     m_PersistentCalls:
       m_Calls:
@@ -3186,6 +3222,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1444736321}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Attack
           m_BoolArgument: 0
         m_CallState: 2
   onAttack:
@@ -3353,6 +3401,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1518328632}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Armature|Flying_Armature
           m_BoolArgument: 0
         m_CallState: 2
   onAttack:

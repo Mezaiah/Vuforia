@@ -40,6 +40,6 @@ public void TakeDamage(float dmg)
 }
 private void Die()
 {
-
+onDeath?.Invoke();
 }
 }

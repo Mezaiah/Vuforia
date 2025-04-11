@@ -15,6 +15,10 @@ public float minDmg = 5f;
 
 [SerializeField]
 public float maxDmg = 50f;
+
+[SerializeField]
+private string fighterName = "Fighter";
+public string FighterName => fighterName;
 private float AttackDuration = 1f;
 public float attackDuration => AttackDuration;
 

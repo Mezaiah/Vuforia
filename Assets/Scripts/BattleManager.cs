@@ -21,6 +21,10 @@ public class BattleManager : MonoBehaviour
       public UnityEvent onBattleStart;
       [SerializeField]
       public UnityEvent onBattleStop;
+      [SerializeField]
+      private UnityEvent onBattleEnd;
+      [SerializeField]
+      private UnityEvent<string> onFighterWin;
       private int currentfighterIndex = 0;
       private bool isBattleActive = false;
       private Coroutine attackCoRoutine;
@@ -89,10 +93,16 @@ public class BattleManager : MonoBehaviour
            attackCoRoutine = StartCoroutine(Attack());
         }else 
         {
-            StopBattle();
+        BattleFinish(attacker.FighterName);
         }
    }
     
+    private void BattleFinish(string winnerName)
+    {
+    onBattleEnd?.Invoke();
+            StopBattle();
+            onFighterWin?.Invoke(winnerName);
+    }
     private void StopBattle()
     {
 

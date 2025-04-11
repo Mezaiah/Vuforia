@@ -1365,6 +1365,7 @@ MonoBehaviour:
   - charizardCry
   - hit
   - spark
+  - victory
   audioS: {fileID: 1142863739}
   musicS: {fileID: 1031938549}
   masterMixer: {fileID: 0}
@@ -2234,7 +2235,7 @@ Transform:
   m_GameObject: {fileID: 1088927583}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.003, y: 0, z: -0.001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2284,7 +2285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0070251063
+      value: -0.0053769695
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2292,11 +2293,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.026302945
+      value: 0.025668994
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0073155668
+      value: 0.08589916
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2304,7 +2305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99997324
+      value: 0.99630386
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2316,7 +2317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.838
+      value: 170.145
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 753fa63d375d6354c8837c3070ea4de3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2584,7 +2585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a79a4311029dcc48a6d131f2835c60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winText: {fileID: 0}
+  winText: {fileID: 1704753502}
 --- !u!114 &1219344812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4306,11 +4307,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fighters: []
   secondsBetweenAttacks: 1
-  secondsToStartBattle: 3
+  secondsToStartBattle: 1
   secondsToAttacks: 1
   onBattleStart:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 629101008}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: StopSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Battle
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 629101008}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
         m_MethodName: PlayMusic
@@ -4352,7 +4365,19 @@ MonoBehaviour:
         m_CallState: 2
   onBattleEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 629101008}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: victory
+          m_BoolArgument: 0
+        m_CallState: 2
   onFighterWin:
     m_PersistentCalls:
       m_Calls:

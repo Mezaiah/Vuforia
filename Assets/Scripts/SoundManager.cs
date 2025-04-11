@@ -77,6 +77,10 @@ public class SoundManager : MonoBehaviour
         musicS.Stop();
     }
 
+      public void StopSound(){
+        audioS.Stop();
+    }
+
     public void SetMixerVolume(float volume){
 
         masterMixer.SetFloat("masterVolume",volume);
